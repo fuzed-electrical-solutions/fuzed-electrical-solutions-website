@@ -5,7 +5,6 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import logoForLightMode from "@/assets/fuzed-horizontal-logo-light.jpeg";
-import logoForDarkMode from "@/assets/fuzed-horizontal-logo-dark.jpeg";
 import fuzedHorizontalLogo from "@/assets/fuzed-horizontal-logo.png";
 
 const navLinks = [
@@ -23,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const { resolvedTheme } = useTheme();
   const location = useLocation();
-  const headerLogo = mounted ? (resolvedTheme === "dark" ? logoForDarkMode : logoForLightMode) : logoForLightMode;
+  const headerLogo = mounted ? (resolvedTheme === "dark" ? fuzedHorizontalLogo : logoForLightMode) : logoForLightMode;
   const footerLogo = fuzedHorizontalLogo;
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

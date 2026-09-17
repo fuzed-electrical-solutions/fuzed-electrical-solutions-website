@@ -7,7 +7,7 @@ import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import heroImage from "@/assets/hero-product.jpg";
 import logoForLightMode from "@/assets/fuzed-horizontal-logo-light.jpeg";
-import logoForDarkMode from "@/assets/fuzed-horizontal-logo-dark.jpeg";
+import fuzedHorizontalLogo from "@/assets/fuzed-horizontal-logo.png";
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -17,7 +17,7 @@ const Index = () => {
     setMounted(true);
   }, []);
 
-  const heroLogo = mounted ? (resolvedTheme === "dark" ? logoForDarkMode : logoForLightMode) : logoForLightMode;
+  const heroLogo = mounted ? (resolvedTheme === "dark" ? fuzedHorizontalLogo : logoForLightMode) : logoForLightMode;
 
   const highlightProductIds = [
     "dual-channel-receiver-switch",
